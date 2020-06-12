@@ -1,2 +1,3 @@
 # img-filter-api
-Simple image filtering API
+Simple image filtering API built with FastAPI
+
