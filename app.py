@@ -10,7 +10,7 @@ app = FastAPI()
 
 @app.post("/images")
 async def filter_img(filters: List[str] = Query(None),
-                     file: UploadFile = File(...)) -> File:
+                     file: UploadFile = File(...)):
     img = await file.read()
     img = await apply_filters(img, filters)
     return StreamingResponse(io.BytesIO(img), media_type="image/jpeg")

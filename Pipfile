@@ -12,6 +12,7 @@ aiohttp = "*"
 python-multipart = "*"
 
 [dev-packages]
+mypy = "*"
 
 [requires]
 python_version = "3.7"
