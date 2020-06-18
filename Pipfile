@@ -13,6 +13,8 @@ python-multipart = "*"
 
 [dev-packages]
 mypy = "*"
+flake8 = "*"
+isort = "*"
 
 [requires]
 python_version = "3.7"

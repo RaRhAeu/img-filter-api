@@ -1,18 +1,18 @@
-import cv2
-import numpy as np
+import cv2  # type: ignore
+import numpy as np  # type: ignore
 
 
-async def gaussian_blur(img: np.ndarray) -> np.ndarray:
+def gaussian_blur(img: np.ndarray) -> np.ndarray:
     res = cv2.GaussianBlur(img, (5, 5), cv2.BORDER_DEFAULT)
     return res
 
 
-async def edge_detect(img: np.ndarray) -> np.ndarray:
+def edge_detect(img: np.ndarray) -> np.ndarray:
     edges = cv2.Canny(img, 100, 300)
     return edges
 
 
-async def vintage(img: np.ndarray) -> np.ndarray:
+def vintage(img: np.ndarray) -> np.ndarray:
     rows, cols = img.shape[:2]
     # Create gaussian filter
     kernel_x = cv2.getGaussianKernel(cols, 200)
