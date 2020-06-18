@@ -17,6 +17,7 @@ flake8 = "*"
 isort = "*"
 pytest = "*"
 pytest-cov = "*"
+requests = "*"
 
 [requires]
 python_version = "3.7"

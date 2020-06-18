@@ -34,7 +34,7 @@ To get started with your own filters, all you have to do is
 add a function to ```filters.py```, with the following header:
 ```python
 def my_filter(img: np.ndarray) -> np.ndarray:
-    # do smth with img
+    # do something with img
     return new_img
 ```
 and then add its name to filter_map, which maps functions names

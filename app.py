@@ -1,7 +1,7 @@
 import io
 from typing import List
 
-from fastapi import FastAPI, File, Query, UploadFile
+from fastapi import FastAPI, File, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 
@@ -17,15 +17,19 @@ app.add_middleware(
 )
 
 
-@app.post("/images")
+@app.post("/image")
 async def filter_img(filters: List[str] = Query(None),
                      file: UploadFile = File(...)):
     img = await file.read()
-    img = apply_filters(img, filters)
+    try:
+        img = apply_filters(img, filters)
+    except Exception:
+        raise HTTPException(status_code=415,
+                            detail="Unable to process the image")
     return StreamingResponse(io.BytesIO(img), media_type="image/jpeg")
 
 
-@app.get("/from_url")
+@app.get("/image_from_url")
 async def filter_from_url(filters: List[str] = Query(None),
                           url: str = Query(...)):
     img = await get_img_from_url(url)

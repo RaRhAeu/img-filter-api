@@ -26,6 +26,6 @@ def vintage(img: np.ndarray) -> np.ndarray:
 
 filter_map = {
     "gaussian": gaussian_blur,
-    "edge": edge_detect,
-    "vintage": vintage
+    "vintage": vintage,
+    "edge": edge_detect
 }
