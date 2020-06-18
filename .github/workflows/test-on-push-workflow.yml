@@ -32,4 +32,4 @@ jobs:
       run: |
         pipenv run pytest --cov-report=xml --cov=.
     - name: Upload codecoverage
-        bash <(curl -s https://codecov.io/bash)
+        bash <(curl -s https://codecov.io/bash) -t c8e97838-9dbb-427c-af92-4e95d4c673ee
