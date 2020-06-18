@@ -1,4 +1,4 @@
-name: img-filter-api
+name: build
 
 on:
   push:

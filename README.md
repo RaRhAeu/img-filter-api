@@ -1,3 +1,4 @@
+![](https://github.com/RaRhAeu/img-filter-api/workflows/build/badge.svg)
 [![codecov](https://codecov.io/gh/RaRhAeu/img-filter-api/branch/master/graph/badge.svg)](https://codecov.io/gh/RaRhAeu/img-filter-api)
 # img-filter-api
 Simple image filtering API built with [FastAPI](https://fastapi.tiangolo.com/).
