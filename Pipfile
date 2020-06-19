@@ -10,6 +10,7 @@ opencv-python = "*"
 numpy = "*"
 aiohttp = "*"
 python-multipart = "*"
+Pillow = "*"
 
 [dev-packages]
 mypy = "*"

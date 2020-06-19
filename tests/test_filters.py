@@ -18,11 +18,11 @@ def test_apply_filters():
     all_filters = filter_map.keys()
     test_img = response.content
     assert isinstance(test_img, bytes)
-    result_img = apply_filters(test_img, all_filters)
-    assert isinstance(result_img, bytes)
+    for _filter in all_filters:
+        test_res = apply_filters(test_img, _filter)
+        assert isinstance(test_res, bytes)
 
 
 def test_apply_filters_fail():
     with pytest.raises(cv2.error):
-        res = apply_filters(b"asd", [])
-        assert res is None
+        apply_filters(b"asd", [])

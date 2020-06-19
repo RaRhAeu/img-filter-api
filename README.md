@@ -33,7 +33,7 @@ After that, api documentation will be available at
 ## Extending api with custom filters
 
 To get started with your own filters, all you have to do is
-add a function to ```filters.py```, with the following header:
+add a function to ```filters.py```, with the following prototype:
 ```python
 def my_filter(img: np.ndarray) -> np.ndarray:
     # do something with img
@@ -48,10 +48,13 @@ filter_map = {
 }
 ```
 now you can request the api endpoints giving it the ?filter 
-parameter equals to my_filter
-
-
-### TODOS:
-- add tests including flake8 and mypy test
-- create git workflow
-- configure coverage badge
+parameter equals to my_filter.
+### List of currently available filters:
+ - gaussian - Gaussian blur
+ - vintage - Vintage effect
+ - edge - Edge detection
+### Warning:
+Not all filters are compatible with each other, therefore
+order of applying them might matter, eg. you cannot run 
+edge filter, and then gaussian, because the first one 
+reduces the dimension of an image array.

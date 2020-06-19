@@ -15,9 +15,7 @@ def apply_filters(img: Union[bytes, str],
         for _filter in filter_list:
             if _filter in filter_map:
                 img = filter_map[_filter](img)
-    success, encoded_img = cv2.imencode('.jpg', img)
-    if not success:
-        raise Exception
+    _, encoded_img = cv2.imencode('.jpg', img)
     return encoded_img.tobytes()
 
 
